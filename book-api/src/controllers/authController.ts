@@ -109,8 +109,10 @@ export const getCurrentUser = async (req: CustomRequest, res: Response) => {
 };
 
 export const logout = async (_: Request, res: Response) => {
-    res.clearCookie('accessToken');
+    res.clearCookie('accessToken', {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none',
+    });
     res.json({message: 'You have been logged out'})
 };
-
-
