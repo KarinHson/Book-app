@@ -15,16 +15,16 @@
 
 <template>
     <div class="review">
-    <p><strong>Name:</strong> {{ name }}</p>
-    <p><strong>Rating:</strong> {{ rating }} / 5</p>
-    <p><strong>Review:</strong> {{ content }}</p>
-    <p><i>{{ new Date (created_at).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+        <p><strong>Name:</strong> {{ name }}</p>
+        <p><strong>Rating:</strong> {{ rating }} / 5</p>
+        <p><strong>Review:</strong> {{ content }}</p>
+        <p><i v-if="created_at">{{ new Date (created_at).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
     }) }}</i></p>
 
-</div>
+    </div>
 
 </template>
 

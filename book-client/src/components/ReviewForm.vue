@@ -84,18 +84,12 @@ onMounted ( async() => {
 
 <template>
     <form class="form-section" @submit.prevent="submit">
-        <label>Name
-            <InputField placeholder="Name" type="text" name="name" v-model="form.name"></InputField>
-            <span class="error" v-if="errors.name">{{ errors.name }}</span>
-        </label>
-        <label>Rating
-            <InputField type="number" name="rating" :min="1" :max="5" v-model="form.rating" class="rating-input"></InputField>
-            <span class="error" v-if="errors.rating">{{ errors.rating }}</span>
-        </label>
-        <label>Review
-            <InputField placeholder="Review" type="text" name="review" v-model="form.content"></InputField>
-            <span class="error" v-if="errors.content">{{ errors.content }}</span>
-        </label>
+        <InputField label="Name" id="name" placeholder="Name" type="text" name="name" v-model="form.name"></InputField>
+        <span class="error" v-if="errors.name">{{ errors.name }}</span>
+        <InputField label="Rating" id="rating" type="number" name="rating" :min="1" :max="5" v-model="form.rating" class="rating-input"></InputField>
+        <span class="error" v-if="errors.rating">{{ errors.rating }}</span>
+        <InputField label="Review" id="review" placeholder="Review" type="text" name="review" v-model="form.content"></InputField>
+        <span class="error" v-if="errors.content">{{ errors.content }}</span>
         <PrimaryButton type="submit" buttonLabel="Submit review"></PrimaryButton>
 
     </form>
@@ -110,18 +104,12 @@ onMounted ( async() => {
     flex-direction: column;
     gap: 1rem;
 
-    label{
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-
-        .rating-input {
+    .rating-input {
             width: 18rem;
-        }
+    }
 
-        span {
+    span {
             color: red;
-        }
     }
 }
 
