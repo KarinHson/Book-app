@@ -17,7 +17,7 @@ interface Review {
   name: string;
   content: string;
   rating: number;
-  created_at: Date;
+  created_at: string;
 }
 
 interface Book {
